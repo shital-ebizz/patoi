@@ -1,0 +1,42 @@
+<!-- Start Order Tracking Area -->
+<div class="order-tracking-area pt-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="order-tracking-image">
+                    <img src="assets/img/dog.png" alt="dog">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="order-tracking-content">
+                    <h3>Order Tracking</h3>
+                    <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci
+                        porta dapibus. Curabitur aliquet quam id dui posuere blandit. Cras ultricies ligula sed magna
+                        dictum porta.</p>
+                    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group mb-3">
+                            <label>Order ID</label>
+                            <input type="text" formControlName="orderId" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f['orderId'].errors }"
+                            />
+                            <div *ngIf="submitted && f['orderId'].errors" class="invalid-feedback">
+                                <div *ngIf="f['orderId'].errors['required']">Order is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Billing email</label>
+                            <input type="text" formControlName="Billing_email" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f['Billing_email'].errors }"
+                            />
+                            <div *ngIf="submitted && f['Billing_email'].errors" class="invalid-feedback">
+                                <div *ngIf="f['Billing_email'].errors['required']">Billing email is required</div>
+                            </div>
+                        </div>
+                        <button type="submit">Track</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Order Tracking Area -->

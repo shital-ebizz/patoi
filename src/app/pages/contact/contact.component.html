@@ -1,0 +1,132 @@
+<!-- Start Page Title Area -->
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h1>Contact Us</h1>
+            <ul>
+                <li><a [routerLink]="['/']">Home</a></li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- End Page Title Area -->
+
+<!-- Start Contact Us Area -->
+<div class="contact-area pt-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="contact-form">
+                    <h3>Get In Touch</h3>
+                    <form id="contactForm" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Your Name</label>
+                                    <input type="text" name="name" formControlName="name" class="form-control" id="name" required
+                                        data-error="Please enter your name"
+                                        [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
+                                    <div class="help-block with-errors"></div>
+                                        <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['name'].errors['required']">Name is required</div>
+                                          </div>
+                                    
+                                   
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Email Address</label>
+                                    <input type="email" name="email" class="form-control" id="email" formControlName="email" required
+                                        data-error="Please enter your email"
+                                        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+                                        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['email'].errors['required']">Email is required</div>
+                                          </div>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Phone Number</label>
+                                    <input type="text" name="phone_number" class="form-control" id="phone_number" formControlName="phone"
+                                        required data-error="Please enter your phone number"
+                                        [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }">
+                                        <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['phone'].errors['required']">phone is required</div>
+                                          </div>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="form-group mb-3">
+                                    <label>Subject</label>
+                                    <input type="text" name="msg_subject" class="form-control" id="msg_subject" formControlName="subject" required 
+                                        data-error="Please enter your subject"
+                                        [ngClass]="{ 'is-invalid': submitted && f['subject'].errors }">
+                                        <div *ngIf="submitted && f['subject'].errors" class="invalid-feedback">
+                                            <div *ngIf="f['subject'].errors['required']">subject is required</div>
+                                          </div>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group mb-3">
+                                    <label>Message...</label>
+                                    <textarea name="message" id="message" class="form-control" formControlName="msg" cols="30" rows="4"
+                                        required data-error="Please enter your message"
+                                        [ngClass]="{ 'is-invalid': submitted && f['msg'].errors }">
+                                        
+                                    </textarea>
+                                    <div *ngIf="submitted && f['msg'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['msg'].errors['required']">msg is required</div>
+                                      </div>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-check mb-3">
+                                    <input type="checkbox" class="form-check-input" formControlName="terms" 
+                                    id="checkme"
+                                    [ngClass]="{ 'is-invalid': submitted && f['terms'].errors }">
+                                    <label class="form-check-label" for="checkme">
+                                        Accept <a [routerLink]="['/terms']">terms of Services</a> and 
+                                        <a [routerLink]="['/privacy-policy']">Privacy Policy</a>
+                                    </label> 
+                                    
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <button type="submit" class="default-btn"><span>Send Message</span></button>
+                                <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <ul>
+                        <li><span>Hotline:</span> <a href="tel:12855">12855</a></li>
+                        <li><span>Tech support:</span> <a href="tel:+1514312-5678">+1 (514) 312-5678</a></li>
+                        <li><span>Email:</span> <a
+                                href="https://templates.envytheme.com/cdn-cgi/l/email-protection#6a020f0606052a1a0b1e050344090507"><span
+                                    class="__cf_email__"
+                                    data-cfemail="1078757c7c7f506071647f793e737f7d">abc@gmail.com</span></a>
+                        </li>
+                        <li><span>Address:</span> 1523 Cook Hill Road New Haven, CT</li>
+                        <li><span>Available:</span> Monday - Friday 8:00am - 8:00pm</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="maps">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46660.669043361966!2d-76.17429939609431!3d43.03529129888566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d9f3b8019f2991%3A0x58d5929e21a62e5!2sDinosaur%20Bar-B-Que!5e0!3m2!1sen!2sbd!4v1593527523138!5m2!1sen!2sbd"></iframe>
+        </div>
+    </div>
+</div>
+<!-- End Contact Us Area -->

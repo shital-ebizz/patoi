@@ -1,0 +1,43 @@
+<!-- Start Page Title Area -->
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h1>Shop Grid</h1>
+            <ul>
+                <li><a [routerLink]="['/']">Home</a></li>
+                <li>Shop Grid</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- End Page Title Area -->
+
+<!-- Start Products Area -->
+<div class="products-area ptb-100">
+    <div class="container">
+        <div class="patoi-grid-sorting row align-items-center">
+            <div class="col-lg-6 col-md-6 result-count">
+                <div class="d-flex align-items-center">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#productsFilterModal" class="sidebar-filter"><i
+                            class='bx bx-filter-alt'></i>Filter</a>
+                    <p>We found <span class="count">12</span> products available for you</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 ordering">
+                <div class="select-box">
+                    <label>Sort By:</label>
+                    <select>
+                        <option>Default</option>
+                        <option>Popularity</option>
+                        <option>Latest</option>
+                        <option>Price: low to high</option>
+                        <option>Price: high to low</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <app-products></app-products>
+
+    </div>
+</div>
+<!-- End Products Area -->

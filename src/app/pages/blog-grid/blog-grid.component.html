@@ -1,0 +1,47 @@
+<!-- Start Page Title Area -->
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h1>Blog Grid</h1>
+            <ul>
+                <li><a [routerLink]="['/']">Home</a></li>
+                <li>Blog Grid</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- End Page Title Area -->
+
+<!-- Start Blog Area -->
+<div class="blog-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6"
+                *ngFor="let data of blog_details | slice: (page-1) * pageSize : page * pageSize">
+                <div class="single-blog-post">
+                    <div class="image">
+                        <a [routerLink]="['/blog-detail']" class="d-block">
+                            <img src="{{data.image}}" alt="blog-image">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <span class="date">
+                            <span>{{data.date}}</span>{{data.year}}
+                        </span>
+                        <a [routerLink]="['/blog-detail']" class="category">{{data.category}}</a>
+                        <h3><a [routerLink]="['/blog-detail']">{{data.name}}</a></h3>
+                        <p>{{data.desc}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12">
+                <ngb-pagination class="pagination-area pagination" [(page)]="page" [pageSize]="pageSize" size="lg"
+                    [collectionSize]="blog_details.length">
+                </ngb-pagination>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Blog Area -->
